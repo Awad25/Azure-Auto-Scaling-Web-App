@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Motivation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            padding: 50px;
+            position: relative;
+            min-height: 100vh;
+            cursor: default;
+            overflow: hidden;
+        }
+        h1 {
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .quote-button {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 50px;
+            margin: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .quote-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        #quote-display {
+            font-size: 24px;
+            margin: 30px auto;
+            color: #16a085;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        #secret-message {
+            position: fixed;
+            top: 73%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: #e74c3c;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: all 1s;
+            z-index: 100;
+            text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+            pointer-events: none;
+        }
+        #secret-message.visible {
+            opacity: 1;
+        }
+        #konami-hint {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: #95a5a6;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daily Motivation</h1>
+    
+    <button class="quote-button" onclick="showQuote()">Get Today's Quote</button>
+    <div id="quote-display"></div>
+    
+    <div id="secret-message">I AM PROUD OF YOUUU ❤️❤️</div>
+    
+    <div id="konami-hint">↑↑↓↓←→←→</div>
+    
+    <script>
+        const quotes = [
+            "The only limit to our realization of tomorrow is our doubts of today. —FDR",
+            "What you get by achieving your goals is not as important as what you become. —Zig Ziglar",
+            "Don't count the days, make the days count. —Muhammad Ali",
+            "The future belongs to those who believe in their dreams. —Eleanor Roosevelt",
+            "You miss 100% of the shots you don't take. —Wayne Gretzky"
+        ];
+        
+        const konamiCode = [
+            'ArrowUp', 'ArrowUp',
+            'ArrowDown', 'ArrowDown',
+            'ArrowLeft', 'ArrowRight',
+            'ArrowLeft', 'ArrowRight',
+        ];
+        let konamiIndex = 0;
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.code === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    activateSecret();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+        
+        function showQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote-display').innerHTML = `"${randomQuote}"`;
+        }
+        
+        function activateSecret() {
+            document.getElementById('secret-message').classList.add('visible');
+        }
+    </script>
+</body>
+</html>
