@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "This is a simple web application that provides daily motivational quotes. The app is designed with a user-friendly interface and features interactive animations.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC"
