@@ -1,26 +1,10 @@
-name: Deploy HTML App to Azure
+- name: Login to Azure
+  uses: azure/login@v1
+  with:
+    creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: Production
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    # Optional: Verify files are present
-    - name: List files
-      run: ls -R
-    
-    # Simple deployment using publish profile
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'auto-scale-app-awsid'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-        package: .
+- name: Deploy to Azure Web App
+  uses: azure/webapps-deploy@v2
+  with:
+    app-name: 'auto-scale-app-awsid'
+    package: .
