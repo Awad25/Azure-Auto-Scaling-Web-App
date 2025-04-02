@@ -72,14 +72,14 @@
 </head>
 <body>
     <h1>Daily Motivation</h1>
-    
+
     <button class="quote-button" onclick="showQuote()">Get Today's Quote</button>
     <div id="quote-display"></div>
-    
+
     <div id="secret-message">I AM PROUD OF YOUUU ❤️❤️</div>
-    
+
     <div id="konami-hint">↑↑↓↓←→←→</div>
-    
+
     <script>
         const quotes = [
             "The only limit to our realization of tomorrow is our doubts of today. —FDR",
@@ -88,7 +88,7 @@
             "The future belongs to those who believe in their dreams. —Eleanor Roosevelt",
             "You miss 100% of the shots you don't take. —Wayne Gretzky"
         ];
-        
+
         const konamiCode = [
             'ArrowUp', 'ArrowUp',
             'ArrowDown', 'ArrowDown',
@@ -96,9 +96,9 @@
             'ArrowLeft', 'ArrowRight',
         ];
         let konamiIndex = 0;
-        
+
         document.addEventListener('keydown', (e) => {
-            if (e.code === konamiCode[konamiIndex]) {
+if (e.code === konamiCode[konamiIndex]) {
                 konamiIndex++;
                 if (konamiIndex === konamiCode.length) {
                     activateSecret();
@@ -108,12 +108,12 @@
                 konamiIndex = 0;
             }
         });
-        
+
         function showQuote() {
             const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            document.getElementById('quote-display').innerHTML = `"${randomQuote}"`;
+            document.getElementById('quote-display').innerHTML = "${randomQuote}";
         }
-        
+
         function activateSecret() {
             document.getElementById('secret-message').classList.add('visible');
         }
