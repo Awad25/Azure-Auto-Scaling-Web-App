@@ -1,4 +1,3 @@
-
 {
   "name": "azure-auto-scaling-web-app",
   "version": "1.0.0",
@@ -7,9 +6,8 @@
   "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
-
-
-
-
