@@ -1,28 +1,33 @@
 # Daily Motivation Web App
 
 ## Overview
-This is a simple web application that provides daily motivational quotes. The app is designed with a user-friendly interface and features interactive animations.
+An interactive web application that delivers daily motivational quotes with engaging animations and a hidden easter egg.
 
-## Features
-- Displays random motivational quotes.
-- Smooth UI/UX with interactive buttons and animations.
-- Special hidden feature triggered by a key sequence.
-- Clean and responsive design.
+## Key Features
+- **Random Quote Generator**: Click the button to display inspirational quotes
+- **Konami Code Easter Egg**: 
+  - Enter the classic sequence: ↑ ↑ ↓ ↓ ← → ← → 
+  - Triggers a special hidden message
+- **Responsive Design**: Works on all device sizes
+- **Smooth Animations**: CSS-powered transitions for enhanced UX
 
-## Technologies Used
-- HTML
-- CSS
-- JavaScript
-
-## How to Use
-1. Click the **Get Today's Quote** button to display a random motivational quote.
-2. Enjoy the sleek animations and design!
+## Technologies
+- HTML5
+- CSS3 (with animations)
+- Vanilla JavaScript
 
 ## Deployment
-This web app is hosted on **Azure App Services** with auto-scaling enabled for optimized performance.
+- Hosted on **Azure App Services** 
+- Configured with auto-scaling (Premium V3 P1V3 plan)
+- CI/CD via GitHub Actions
 
-## Setup Instructions
-To run this project locally:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/daily-motivation.git
+## How to Use
+1. Visit the live site: [https://your-app.azurewebsites.net]()
+2. Click "Get Today's Quote" for inspiration
+3. Try the secret code for a surprise!
+
+## Local Development
+```bash
+git clone https://github.com/your-username/daily-motivation.git
+cd daily-motivation
+# Open index.html in browser
