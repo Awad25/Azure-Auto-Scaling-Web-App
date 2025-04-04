@@ -18,7 +18,7 @@ An interactive web application that delivers daily motivational quotes with enga
 
 ## Deployment
 - Hosted on **Azure App Services** 
-- Configured with auto-scaling (Premium V3 P1V3 plan)
+- Configured with Rule-Based-Scaling (Leagacy Standard S1)
 - CI/CD via GitHub Actions
 
 ## How to Use
